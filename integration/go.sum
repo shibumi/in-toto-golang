@@ -1,0 +1,4 @@
+github.com/in-toto/in-toto-golang v0.0.0-20191021163049-293f5ace877c h1:iu3n1c+r03eUuYmEpVNSzi0Nkb69V7Isn65MmZO1ILk=
+github.com/in-toto/in-toto-golang v0.0.0-20191021163049-293f5ace877c/go.mod h1:Ac+wJau7Hi5rgjeYe15M6QrPw4zUxCgsSK5ssfum8XA=
+github.com/in-toto/in-toto-golang v0.0.0-20191022012338-d1543711a0ca h1:8LiMrdIF7QWWQgq2Ol6fbb/Sz2ioAVoXawP+kNP75tA=
+github.com/in-toto/in-toto-golang v0.0.0-20191022012338-d1543711a0ca/go.mod h1:Ac+wJau7Hi5rgjeYe15M6QrPw4zUxCgsSK5ssfum8XA=
