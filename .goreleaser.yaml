@@ -1,0 +1,26 @@
+project_name: in-toto
+builds:
+  - ldflags:
+      - "-s -w"
+      - "-extldflags=-zrelro"
+      - "-extldflags=-znow"
+      - "-X cmd.tag={{.Version}}"
+      - "-X cmd.commit={{.FullCommit}}"
+      - "-X cmd.date={{.CommitDate}}"
+    env:
+      - "CGO_ENABLED=0"
+      - "GO111MODULE=on"
+      - "GOFLAGS=-mod=readonly -trimpath"
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - amd64
+    main: ./
+signs:
+  - cmd: cosign
+    signature: "${artifact}.sig"
+    stdin: '{{ .Env.COSIGN_PWD }}'
+    args: ["sign-blob", "-oidc-issuer=https://token.actions.githubusercontent.com", "-output=${signature}", "${artifact}"]
+    artifacts: all
