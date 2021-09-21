@@ -1,0 +1,20 @@
+project_name: in-toto
+builds:
+  - ldflags:
+      - "-s -w"
+      - "-extldflags=-zrelro"
+      - "-extldflags=-znow"
+      - "-X main.tag={{.Version}}"
+      - "-X main.commit={{.FullCommit}}"
+      - "-X main.date={{.Date}}"
+    env:
+      - "CGO_ENABLED=0"
+      - "GO111MODULE=on"
+      - "GOFLAGS=-mod=readonly -trimpath"
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - amd64
+    main: ./cmd/in-toto/
