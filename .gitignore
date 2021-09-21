@@ -1,0 +1,8 @@
+# goreleaser distribution directory
+dist
+
+# GoLand idea configuration
+.idea
+
+# VSCode configuration
+.vscode
