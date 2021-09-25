@@ -18,3 +18,8 @@ builds:
     goarch:
       - amd64
     main: ./cmd/in-toto/
+signs:
+  - cmd: cosign
+    stdin: '{{ .Env.COSIGN_PWD }}'
+    args: ["sign-blob", "-key=.github/cosign.key", "-output=${signature}", "${artifacts}"]
+    artifacts: all
