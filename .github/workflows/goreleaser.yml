@@ -20,7 +20,7 @@ jobs:
       - name: install cosign
         uses: sigstore/cosign-installer@main
         with:
-          cosign-release: '1.2.1'
+          cosign-release: 'v1.2.1'
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v2
         with:
