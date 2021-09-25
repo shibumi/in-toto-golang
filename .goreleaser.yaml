@@ -20,6 +20,7 @@ builds:
     main: ./cmd/in-toto/
 signs:
   - cmd: cosign
+    signature: "${artifact}.sig"
     stdin: '{{ .Env.COSIGN_PWD }}'
-    args: ["sign-blob", "-key=.github/cosign.key", "-output=${signature}", "${artifacts}"]
+    args: ["sign-blob", "-key=.github/cosign.key", "-output=${signature}", "${artifact}"]
     artifacts: all
