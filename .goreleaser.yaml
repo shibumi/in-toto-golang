@@ -6,7 +6,7 @@ builds:
       - "-extldflags=-znow"
       - "-X main.tag={{.Version}}"
       - "-X main.commit={{.FullCommit}}"
-      - "-X main.date={{.Date}}"
+      - "-X main.date={{.CommitDate}}"
     env:
       - "CGO_ENABLED=0"
       - "GO111MODULE=on"
