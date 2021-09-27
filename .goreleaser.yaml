@@ -6,7 +6,7 @@ builds:
       - "-extldflags=-znow"
       - "-X main.tag={{.Version}}"
       - "-X main.commit={{.FullCommit}}"
-      - "-X main.date={{.Date}}"
+      - "-X main.date={{.CommitDate}}"
     env:
       - "CGO_ENABLED=0"
       - "GO111MODULE=on"
@@ -22,5 +22,5 @@ signs:
   - cmd: cosign
     signature: "${artifact}.sig"
     stdin: '{{ .Env.COSIGN_PWD }}'
-    args: ["sign-blob", "-key=.github/cosign.key", "-output=${signature}", "${artifact}"]
+    args: ["sign-blob", "-key={{ .Env.COSIGN_KEY_LOCATION }}", "-output=${signature}", "${artifact}"]
     artifacts: all

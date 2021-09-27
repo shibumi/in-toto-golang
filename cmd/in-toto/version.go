@@ -14,7 +14,7 @@ var (
 var versionCmd = &cobra.Command{
 	Use:   "version",
 	Short: "Display the version of the in-toto CLI tool",
-	Long:  `Display the commit ID, the date and the version tag of the in-toto CLI as embedded by the build system.`,
+	Long:  `Display the commit ID, the build date and the version tag of the in-toto CLI as embedded by the build system.`,
 	RunE:  version,
 }
 
